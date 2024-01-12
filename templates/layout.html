@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<head>
+    <!-- Head elements (e.g., title, link to CSS) -->
+</head>
+<body>
+    {% include 'header.html' %}
+    {% block content %}{% endblock %}
+    {% include 'footer.html' %}
+</body>
+</html>
