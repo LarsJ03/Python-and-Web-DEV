@@ -1,0 +1,99 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.site-header {
+    background-color: #333;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: left; /* Align center */
+    align-items: center;
+    padding: 0.5em 2em;
+}
+
+.logo {
+    margin-right: 0; /* Push everything else to the right */
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+.main-nav {
+    margin-left: 200px;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+
+
+.main-nav ul li {
+    margin-left: 20px;
+}
+
+.main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    transition: color 0.3s;
+}
+
+.main-nav ul li a:hover {
+    color: #4CAF50;
+}
+
+.site-footer {
+    background-color: #2b2b2b; /* Dark grey background */
+    color: #f5f5f5; /* Light grey text */
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.site-footer p {
+    margin: 0;
+    color: #ccc; /* Secondary lighter grey text color */
+}
+
+/* style.css */
+.content-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.text-box {
+    background-color: #f0f0f0; /* Light grey background */
+    border-radius: 8px; /* Rounded edges */
+    padding: 20px;
+    margin-bottom: 20px; /* Space between text boxes */
+    max-width: 800px; /* Or any width you prefer */
+    margin-left: auto; /* Centering the box */
+    margin-right: auto;
+}
+
+.text-box p {
+    margin: 0; /* Removing default paragraph margins */
+    color: #333; /* Darker text color for contrast */
+}
+

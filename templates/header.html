@@ -1,5 +1,19 @@
-{% extends 'layout.html' %}
+<!-- header.html -->
+<header class="site-header">
+    <div class="header-wrapper">
+        <div class="logo">
+            <a href="{{ url_for('index') }}">MySite</a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <!-- Add more navigation links if needed -->
+            </ul>
+        </nav>
+    </div>
+</header>
 
-{% block content %}
-<!-- Your content here -->
-{% endblock %}
+
+
+
