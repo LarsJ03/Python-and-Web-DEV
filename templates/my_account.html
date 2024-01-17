@@ -1,0 +1,16 @@
+
+<!-- templates/my-account.html -->
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="my-account-container">
+    <h2>My Account</h2>
+
+    <p>Hello, {{ session['username'] }}!</p>
+
+    <!-- Logout Link -->
+    <a href="{{ url_for('logout') }}">Logout</a>
+
+    <!-- Additional account information here -->
+</div>
+{% endblock %}

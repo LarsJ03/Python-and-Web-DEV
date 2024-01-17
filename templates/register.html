@@ -1,0 +1,15 @@
+<!-- templates/register.html -->
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="register-container">
+    <h2>Register</h2>
+    <form method="post" action="/register">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Register</button>
+    </form>
+</div>
+{% endblock %}
+
