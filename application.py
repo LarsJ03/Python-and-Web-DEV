@@ -1,16 +1,16 @@
 from flask import Flask, render_template, request, redirect, flash, session, url_for
 from API.users import Users  # Import the Users class
 
-app = Flask(__name__)
-app.secret_key = 'ISkjdSd657Sd65Sdjhjsdaowd'
+application = Flask(__name__)
+application.secret_key = 'ISkjdSd657Sd65Sdjhjsdaowd'
 
 
-@app.route('/')
+@application.route('/')
 def index():
     return render_template('index.html')
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@application.route('/login', methods=['GET', 'POST'])
 def login():
     if is_logged_in():
         return redirect(url_for('my_account'))
@@ -35,7 +35,7 @@ def is_logged_in():
     return 'username' in session
 
 
-@app.route('/register', methods=['GET', 'POST'])
+@application.route('/register', methods=['GET', 'POST'])
 def register():
     if is_logged_in():
         return redirect('/my_account')
@@ -60,7 +60,7 @@ def register():
     return render_template('register.html')
 
 
-@app.route('/my_account')
+@application.route('/my_account')
 def my_account():
     if not is_logged_in():
         return redirect(url_for('login'))  # Redirect to login if not logged in
@@ -69,7 +69,7 @@ def my_account():
     return render_template('my_account.html')
 
 
-@app.route('/logout')
+@application.route('/logout')
 def logout():
     session.pop('username', None)  # Remove the username from the session
     flash('You have been logged out.', 'info')
@@ -77,4 +77,4 @@ def logout():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    application.run(debug=True)
