@@ -17,7 +17,6 @@ Parameters:
   GitHubToken:
     Type: String
     NoEcho: true
-    Default: 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
     Description: GitHub OAuth Token
 
 Resources:
