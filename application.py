@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, flash, session, url
 from API.users import Users  # Import the Users class
 
 app = Flask(__name__)
-app.secret_key = 'ISkjdSd657Sd65Sdjhjsdaow'
+app.secret_key = 'ISkjdSd657Sd65Sdjhjsdaowd'
 
 
 @app.route('/')
