@@ -1,13 +1,22 @@
 <!doctype html>
 <html lang="en">
-<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-
 <head>
-    <!-- Head elements (e.g., title, link to CSS) -->
+    <title>Python&WebDev</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <style>
+        .main-content {
+            min-height: calc(100vh - 110px); /* Adjust 120px to match the actual combined height of your header and footer */
+        }
+    </style>
 </head>
 <body>
     {% include 'header.html' %}
-    {% block content %}{% endblock %}
+    <div class="main-content">
+        {% block content %}{% endblock %}
+    </div>
     {% include 'footer.html' %}
 </body>
 </html>

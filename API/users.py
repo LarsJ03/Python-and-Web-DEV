@@ -2,6 +2,7 @@
 import json
 import os
 
+
 class Users:
     CURRENT_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
     USERS_FILE = os.path.join(CURRENT_DIRECTORY, 'users.json')
@@ -22,7 +23,8 @@ class Users:
     def authenticate_user(username_or_email, password):
         users = Users.load_users()
         for user in users:
-            if (user['username'] == username_or_email or user['email'] == username_or_email) and user['password'] == password:
+            if (user['username'] == username_or_email or user['email'] == username_or_email) and user[
+                'password'] == password:
                 return True
         return False
 
@@ -49,3 +51,10 @@ class Users:
         users = [user for user in users if user.get('username') != username]
         Users.save_users(users)
         return {'message': 'User deleted'}, 200
+
+    def is_username_unique(username):
+        users = Users.load_users()
+        for user in users:
+            if user['username'] == username:
+                return False
+        return True

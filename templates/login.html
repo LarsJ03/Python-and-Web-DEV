@@ -1,16 +1,50 @@
-<!-- templates/login.html -->
 {% extends 'layout.html' %}
 
-<!-- templates/login.html -->
 {% block content %}
-<div class="login-container">
-    <h2>Login</h2>
-    <form method="post" action="/login">
-        <input type="text" name="username_or_email" placeholder="Username or Email">
-        <input type="password" name="password" placeholder="Password">
-        <button type="submit">Login</button>
-    </form>
-    <p>Or <a href="{{ url_for('register') }}">register here</a>.</p>
+<style>
+    .card-body {
+        background-color: #f0f0f0; /* Light grey background */
+    }
+    .container {
+        margin-bottom: 50px; /* Increased space at the bottom */
+    }
+    .btn-primary {
+    background-color: #2b2b2b; /* Dark grey button */
+    border-color: #2b2b2b;
+    }
+
+    .btn-primary:hover {
+        background-color: #3c3c3c; /* Lighter grey on hover */
+        border-color: #3c3c3c;
+    }
+
+    .btn-primary:active {
+        background-color: #4d4d4d; /* Even lighter grey when pressed */
+        border-color: #4d4d4d;
+    }
+</style>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h2 class="card-title text-center">Login</h2>
+                    <form method="post" action="/login" class="p-4">
+                        <div class="form-group">
+                            <input type="text" name="username_or_email" class="form-control" placeholder="Username or Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" class="form-control" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    </form>
+                    <p class="text-center mt-4">Or <a href="{{ url_for('register') }}">register here</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
+
 
