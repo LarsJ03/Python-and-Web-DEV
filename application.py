@@ -79,11 +79,15 @@ def logout():
 
 @application.route('/game')
 def game():
+    if not is_logged_in():
+        return redirect(url_for('login'))
     return render_template('game.html')  # Page with a "Start Game" button
 
 
 @application.route('/game/start', methods=['POST'])
 def start_game():
+    if not is_logged_in():
+        return redirect(url_for('login'))
     game = BlackjackGame()
     game.start_game()
     session['player_hand'] = game.player_hand.rank_suit
@@ -94,6 +98,8 @@ def start_game():
 
 @application.route('/game/playing', methods=['GET', 'POST'])
 def playing():
+    if not is_logged_in():
+        return redirect(url_for('login'))
     if 'player_hand' not in session or 'dealer_hand' not in session or 'deck' not in session:
         return redirect(url_for('game'))
 
@@ -132,6 +138,8 @@ def playing():
 
 @application.route('/game/result')
 def game_result():
+    if not is_logged_in():
+        return redirect(url_for('login'))
     # If there is no game result in session, redirect to start page
     if 'game_result' not in session or 'player_hand' not in session or 'dealer_hand' not in session:
         return redirect(url_for('game'))
@@ -150,6 +158,7 @@ def game_result():
 
 
 def get_card_image(card):
+
     rank, suit = card
     # Convert rank and suit to match file names
     suit_map = {'S': 'spades', 'H': 'hearts', 'D': 'diamonds', 'C': 'clubs'}
