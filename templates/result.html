@@ -29,9 +29,21 @@
 
     <div class="action-buttons">
         <form action="/game/start" method="post">
-            <button type="submit" class="btn btn-primary btn-block">Play Again</button>
+            <button type="submit" class="btn btn-primary btn-block" id="play-again-btn">Play Again</button>
         </form>
     </div>
 </div>
+<script>
+    window.onload = function() {
+        var playAgainBtn = document.getElementById('play-again-btn');
+        if (playAgainBtn) {
+            var position = playAgainBtn.offsetTop - 100; // Adjust the 100 pixels offset as needed
+            window.scrollTo({ top: position, behavior: 'smooth' });
+        }
+    };
+</script>
 {% endblock %}
+
+
+
 

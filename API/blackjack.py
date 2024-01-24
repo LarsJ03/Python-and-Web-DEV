@@ -166,6 +166,7 @@ class BlackjackGame:
         while self.dealer_hand.calculate_score() < 17:
             self.dealer_hand.add_card(self.deck.deal_cards(1)[0])
 
+
     def check_winner(self):
         # Call dealer plays method if player stands and dealer has not bust or hit blackjack
         print(self.dealer_hand.calculate_score())
@@ -177,7 +178,12 @@ class BlackjackGame:
 
         print(f"Player's score: {player_score} with {self.player_hand}")
         print(f"Dealer's score: {dealer_score} with {self.dealer_hand}")
-
+        if player_score == 21 and dealer_score == 21:
+            return "Player and dealer have blackjack so its a tie!"
+        elif player_score == 21:
+            return "Player wins with a blackjack!"
+        elif dealer_score == 21:
+            return "Dealer wins with a blackjack!"
         if player_score > 21:
             return "Dealer wins!"
         elif dealer_score > 21:
