@@ -28,7 +28,9 @@
     </div>
 
     <div class="action-buttons">
-        <a href="{{ url_for('game') }}" class="btn btn-primary">Play Again</a>
+        <form action="/game/start" method="post">
+            <button type="submit" class="btn btn-primary btn-block">Play Again</button>
+        </form>
     </div>
 </div>
 {% endblock %}
