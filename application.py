@@ -117,9 +117,16 @@ def playing():
             game.player_hand.add_card(game.deck.deal_cards(1)[0])
             session['player_hand'] = game.player_hand.rank_suit
             session['deck'] = game.deck.rank_suit  # Update the deck in the session
-            if game.player_hand.calculate_score() > 21:
+            player_score = game.player_hand.calculate_score()
+            if player_score > 21:
+
                 # Player busts, set the game result and end the game
                 session['game_result'] = "Player busts! Dealer wins!"
+                return redirect(url_for('game_result'))
+            elif player_score == 21:
+                # Check for player blackjack or tie
+                print('blackjack!')
+                session['game_result'] = game.check_winner()
                 return redirect(url_for('game_result'))
         elif action == 'stand':
             # Player stands, dealer plays, and check the winner
@@ -134,6 +141,7 @@ def playing():
     dealer_hand_images = [get_card_image(card) for card in session['dealer_hand']]
 
     return render_template('playing.html', player_hand=player_hand_images, dealer_hand=dealer_hand_images)
+
 
 
 @application.route('/game/result')
