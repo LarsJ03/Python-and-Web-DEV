@@ -140,12 +140,21 @@ body {
 }
 
 .game-title {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    font-size: 30px;
 }
 
 .hand-section {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: left;
+}
+
+.hand-section h2 {
+    font-size: 25px;
+}
+
+.outcome h2 {
+    font-size: 25px;
 }
 
 .card-container {
@@ -191,6 +200,56 @@ body {
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content-section {
+    text-align: center;
+    margin: auto;
+    max-width: 800px;
+}
+
+.text-box {
+    text-align: left;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.text-box h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card-image {
+    height: 200px;
+    margin: 20px 0;
+}
+
+.strategy-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.strategy-text {
+    flex: 1;
+    padding-right: 20px; /* Adjust as needed */
+}
+
+.strategy-card {
+    flex: 0 0 auto; /* Don't grow, don't shrink, initial basis auto */
+}
+
+.card-image {
+    height: 200px; /* Keep consistent with other card images */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.button-container {
+    text-align: center; /* Center-aligns the content of this container */
+    margin-top: 20px; /* Adds some space above the button */
 }
 
 
