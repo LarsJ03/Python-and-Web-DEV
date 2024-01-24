@@ -143,7 +143,6 @@ def playing():
     return render_template('playing.html', player_hand=player_hand_images, dealer_hand=dealer_hand_images)
 
 
-
 @application.route('/game/result')
 def game_result():
     if not is_logged_in():
@@ -162,11 +161,11 @@ def game_result():
     dealer_hand_images = [get_card_image(card) for card in dealer_hand_tuples]
 
     # Render the result page with the winner and the card images
-    return render_template('result.html', game_result=result_game, player_hand=player_hand_images, dealer_hand=dealer_hand_images)
+    return render_template('result.html', game_result=result_game, player_hand=player_hand_images,
+                           dealer_hand=dealer_hand_images)
 
 
 def get_card_image(card):
-
     rank, suit = card
     # Convert rank and suit to match file names
     suit_map = {'S': 'spades', 'H': 'hearts', 'D': 'diamonds', 'C': 'clubs'}
