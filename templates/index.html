@@ -4,14 +4,28 @@
 {% block content %}
 <section class="content-section">
     <div class="text-box">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <h2>About This Project</h2>
+        <p>This Blackjack game is a school project designed to showcase web development and programming skills. It is purely educational and is not intended for serious gambling or real money use.</p>
     </div>
     <div class="text-box">
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <h2>Learn Blackjack</h2>
+        <p>Blackjack, also known as 21, is one of the most popular casino games in the world. The aim is to beat the dealer's hand without going over 21. Each player starts with two cards, one of the dealer's cards is hidden until the end. Players can 'Hit' to draw more cards or 'Stand' to stop. The dealer must hit until their cards total 17 or higher.</p>
     </div>
-    <div class="text-box">
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    <div class="text-box strategy-box">
+        <div class="strategy-text">
+            <h2>Try Your Strategy</h2>
+            <p>Test your luck and strategy skills with our Blackjack game. Whether you're a seasoned player or just learning, our game is a great way to practice and have fun!</p>
+            <!-- Button container for centering the button -->
+            <div class="button-container">
+                <a href="{{ url_for('game') }}" class="btn btn-primary">Play Blackjack</a>
+            </div>
+        </div>
+        <div class="strategy-card">
+            <img src="{{ url_for('static', filename='cards/ace_of_hearts.png') }}" alt="Ace of Hearts" class="card-image">
+        </div>
     </div>
+
 </section>
 {% endblock %}
+
 
