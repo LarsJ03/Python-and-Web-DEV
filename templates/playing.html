@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="game-container">
+    <h1 class="game-title">Blackjack Game</h1>
+
+    <div class="hand-section">
+        <h2>Your Hand:</h2>
+        <div class="card-container player-hand">
+            {% for image in player_hand %}
+                <img src="{{ image }}" alt="Card Image" class="card-image">
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="hand-section">
+        <h2>Dealer's Hand:</h2>
+        <div class="card-container dealer-hand">
+            <!-- Display the back of the first card -->
+            <img src="{{ url_for('static', filename='cards/hidden_card.png') }}" alt="Hidden Card" class="card-image">
+            <!-- Display the rest of the dealer's cards -->
+            {% for image in dealer_hand[1:] %}
+                <img src="{{ image }}" alt="Card Image" class="card-image">
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <form action="/game/playing" method="post" class="action-form">
+            <button type="submit" name="action" value="hit" class="btn btn-primary">Hit</button>
+            <button type="submit" name="action" value="stand" class="btn btn-primary">Stand</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+

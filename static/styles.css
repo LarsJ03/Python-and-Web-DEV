@@ -42,7 +42,6 @@ body {
 }
 
 
-
 .main-nav ul li {
     margin-left: 20px;
 }
@@ -96,4 +95,162 @@ body {
     margin: 0; /* Removing default paragraph margins */
     color: #333; /* Darker text color for contrast */
 }
+
+.hand-section {
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: flex;
+    gap: 10px;
+}
+
+.card-image {
+    height: 200px; /* Set the height of the cards */
+    width: auto;
+}
+
+.action-buttons button {
+    margin-top: 10px;
+    width: 200px; /* Adjust width as needed */
+}
+
+.btn-primary {
+    background-color: #2b2b2b; /* Dark grey button */
+    border-color: #2b2b2b;
+    }
+
+.btn-primary:hover {
+    background-color: #3c3c3c; /* Lighter grey on hover */
+    border-color: #3c3c3c;
+}
+
+.btn-primary:active {
+    background-color: #4d4d4d; /* Even lighter grey when pressed */
+    border-color: #4d4d4d;
+}
+
+.game-container {
+    width: 60%;
+    margin: 30px auto; /* Adds margin above and below the container */
+    padding: 20px; /* Adds some padding inside the container */
+    background-color: #f0f0f0; /* Light grey background */
+    border-radius: 10px; /* Rounded corners */ /* Optional: adds a subtle shadow */
+    text-align: center;
+}
+
+.game-title {
+    margin-bottom: 5px;
+    font-size: 30px;
+}
+
+.hand-section {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.hand-section h2 {
+    font-size: 25px;
+}
+
+.outcome h2 {
+    font-size: 25px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.player-hand .card-image,
+.dealer-hand .card-image {
+    height: 150px;
+    width: auto;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.action-form {
+    display: inline-block;
+}
+
+.rules-section {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.rules-section h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.rules-section ul {
+    list-style-type: none; /* Removes default list bullets */
+    padding: 0;
+}
+
+.rules-section li {
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content-section {
+    text-align: center;
+    margin: auto;
+    max-width: 800px;
+}
+
+.text-box {
+    text-align: left;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.text-box h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card-image {
+    height: 200px;
+    margin: 20px 0;
+}
+
+.strategy-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.strategy-text {
+    flex: 1;
+    padding-right: 20px; /* Adjust as needed */
+}
+
+.strategy-card {
+    flex: 0 0 auto; /* Don't grow, don't shrink, initial basis auto */
+}
+
+.card-image {
+    height: 200px; /* Keep consistent with other card images */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.button-container {
+    text-align: center; /* Center-aligns the content of this container */
+    margin-top: 20px; /* Adds some space above the button */
+}
+
+
 
