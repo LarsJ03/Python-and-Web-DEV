@@ -8,6 +8,7 @@
             <ul>
                 <li><a href="{{ url_for('index') }}">Home</a></li>
                 {% if 'username' in session %}
+                    <li><a href="{{ url_for('game') }}">Games</a></li>
                     <li><a href="{{ url_for('my_account') }}">My Account</a></li>
                 {% else %}
                     <li><a href="{{ url_for('login') }}">Login</a></li>
