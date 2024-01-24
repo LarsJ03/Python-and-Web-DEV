@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="game-container">
+    <h1 class="game-title">Game Result</h1>
+
+    <div class="hand-section">
+        <h2>Player's Hand:</h2>
+        <div class="card-container player-hand">
+            {% for image in player_hand %}
+                <img src="{{ image }}" alt="Card Image" class="card-image">
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="hand-section">
+        <h2>Dealer's Hand:</h2>
+        <div class="card-container dealer-hand">
+            {% for image in dealer_hand %}
+                <img src="{{ image }}" alt="Card Image" class="card-image">
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="outcome">
+        <h2>Outcome:</h2>
+        <p class="game-result">{{ game_result }}</p>
+    </div>
+
+    <div class="action-buttons">
+        <a href="{{ url_for('game') }}" class="btn btn-primary">Play Again</a>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="game-container">
+    <h1 class="game-title">Welcome to Blackjack</h1>
+
+    <div class="action-buttons">
+        <form action="/game/start" method="post">
+            <button type="submit" class="btn btn-primary btn-block">Start Game</button>
+        </form>
+    </div>
+
+    <div class="rules-section">
+        <h2>Rules of Blackjack:</h2>
+        <ul>
+            <li>The goal of blackjack is to beat the dealer's hand without going over 21.</li>
+            <li>Face cards are worth 10. Aces are worth 1 or 11, whichever makes a better hand.</li>
+            <li>Each player starts with two cards, one of the dealer's cards is hidden until the end.</li>
+            <li>To 'Hit' is to ask for another card. To 'Stand' is to hold your total and end your turn.</li>
+            <li>If you go over 21 you bust, and the dealer wins regardless of the dealer's hand.</li>
+            <li>If you are dealt 21 from the start (Ace & 10), you got a blackjack.</li>
+            <li>Dealer will hit until his/her cards total 17 or higher.</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

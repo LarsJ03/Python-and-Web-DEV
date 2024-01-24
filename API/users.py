@@ -39,8 +39,8 @@ class Users:
     @staticmethod
     def create_user(user_data):
         users = Users.load_users()
-        if any(user['username'] == user_data['username'] for user in users):
-            return {'message': 'Username already exists'}, 400
+        if any(user['email'] == user_data['email'] for user in users):
+            return {'message': 'Email already exists'}, 400
         users.append(user_data)
         Users.save_users(users)
         return user_data, 201
