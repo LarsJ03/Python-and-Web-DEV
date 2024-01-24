@@ -1,7 +1,7 @@
 import random
 
 
-# Create a \textit{Cards} class that holds multiple cards (not single card). Standard playing cards have a rank
+# Create a {Cards} class that holds multiple cards (not single card). Standard playing cards have a rank
 # (ace, two through ten, jack, queen and king) and suit (clubs, diamonds, hearts, spades).
 # This class should output (print) the cards contained in this object.
 # The class should have a  method to rank the cards (by rank) and (another method) to sort by suit.
@@ -162,16 +162,18 @@ class BlackjackGame:
         print("Dealer's hand:", self.dealer_hand)
 
     def dealer_plays(self):
-        # Dealer hits until their score is 17 or higher
-        while self.dealer_hand.calculate_score() < 17:
-            self.dealer_hand.add_card(self.deck.deal_cards(1)[0])
-
+        player_score = self.player_hand.calculate_score()
+        while True:
+            dealer_score = self.dealer_hand.calculate_score()
+            # Dealer hits if score is less than 17, or if dealer is trailing player's score (above 17)
+            if dealer_score < 17 or (dealer_score < player_score and player_score <= 21):
+                self.dealer_hand.add_card(self.deck.deal_cards(1)[0])
+            else:
+                break
 
     def check_winner(self):
-        # Call dealer plays method if player stands and dealer has not bust or hit blackjack
-        print(self.dealer_hand.calculate_score())
-        if self.dealer_hand.calculate_score() < 17:
-            self.dealer_plays()
+        # Assuming dealer plays after the player has stood
+        self.dealer_plays()
 
         player_score = self.player_hand.calculate_score()
         dealer_score = self.dealer_hand.calculate_score()
@@ -194,5 +196,3 @@ class BlackjackGame:
             return "Dealer wins!"
         else:
             return "It's a tie!"
-
-
