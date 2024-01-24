@@ -92,7 +92,11 @@ def start_game():
     game.start_game()
     session['player_hand'] = game.player_hand.rank_suit
     session['dealer_hand'] = game.dealer_hand.rank_suit
-    session['deck'] = game.deck.rank_suit  # Store the remaining deck
+    session['deck'] = game.deck.rank_suit
+    if game.immediate_blackjack:
+        # Player got a Blackjack, show results directly
+        session['game_result'] = game.check_winner()
+        return redirect(url_for('game_result'))
     return redirect(url_for('playing'))
 
 

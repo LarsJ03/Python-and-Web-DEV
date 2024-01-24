@@ -150,6 +150,7 @@ class BlackjackGame:
         self.player_hand = Hand()
         self.dealer_hand = Hand()
         self.deck.shuffle()
+        self.immediate_blackjack = False
 
     def start_game(self):
         # Initial deal (2 cards each)
@@ -157,6 +158,8 @@ class BlackjackGame:
         self.player_hand.add_card(self.deck.deal_cards(1)[0])
         self.dealer_hand.add_card(self.deck.deal_cards(1)[0])
         self.dealer_hand.add_card(self.deck.deal_cards(1)[0])
+
+        self.immediate_blackjack = self.player_hand.calculate_score() == 21
 
         print("Player's hand:", self.player_hand)
         print("Dealer's hand:", self.dealer_hand)
